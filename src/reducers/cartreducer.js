@@ -1,13 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const shoppingItems =[{title: '', qty:0, unitprice:0, qtyprice:0}]
+const shoppingItems =[]
 
 const cartSlice = createSlice({
     name:'cartSlice',
-    // initialState:{
-    //     title: '', qty:0, unitprice:0, qtyprice:0
-    initialState:shoppingItems
-    ,
+    initialState :{
+      shoppingItems
+    },
     reducers:{
     actionUpdateCart(state, action)
         {
@@ -22,8 +21,8 @@ const cartSlice = createSlice({
               state.shoppingItems.push({
                 title,
                 qty: 1,
-                unitprice: parseFloat(price),
-                qtyprice: parseFloat(price)
+                unitprice: (price),
+                qtyprice: (price)
               });
             }
         },
